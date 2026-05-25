@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amita Syakira | CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fdf6ee;
+      color: #3d2b1f;
+    }
+
+    /* NAV */
+    nav {
+      background: #fff;
+      border-bottom: 2px solid #e8d5bf;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 600;
+      color: #7a4f2e;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 400;
+      color: #9a7055;
+      transition: color .2s;
+    }
+
+    nav a:hover {
+      color: #7a4f2e;
+      font-weight: 500;
+    }
+
+    /* HERO */
+    header {
+      background: linear-gradient(135deg, #4e2f18 0%, #7a4f2e 40%, #c9956c 75%, #e8c4a0 100%);
+      padding: 70px 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .photo-wrap {
+      position: relative;
+      display: inline-block;
+    }
+
+    .photo-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #e8c49a, #c97a4e, #7a4f2e, #e8a598);
+      z-index: 0;
+    }
+
+    header img {
+      position: relative;
+      z-index: 1;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid #7a4f2e;
+      object-fit: cover;
+      background: #c9a07a;
+      display: block;
+    }
+
+    .hero-text h1 {
+      font-size: 36px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .hero-text p.role {
+      font-size: 14px;
+      font-weight: 300;
+      color: #e8d5bf;
+      margin-bottom: 14px;
+      letter-spacing: 1px;
+    }
+
+    .hero-text p.bio {
+      font-size: 13px;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, .75);
+      max-width: 420px;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 60px 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h2.sec {
+      font-size: 20px;
+      font-weight: 600;
+      color: #7a4f2e;
+      margin-bottom: 24px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e8d5bf;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .box {
+      background: #fff;
+      border: 1px solid #e8d5bf;
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .box h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #9a7055;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .box p {
+      font-size: 13px;
+      line-height: 1.8;
+      color: #6b4c36;
+    }
+
+    .box ul {
+      list-style: none;
+      font-size: 13px;
+      color: #6b4c36;
+      line-height: 2;
+    }
+
+    .box ul li::before {
+      content: '· ';
+      color: #c9a07a;
+      font-weight: 700;
+    }
+
+    /* SKILLS */
+    .skill-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .sk-item {
+      margin-bottom: 14px;
+    }
+
+    .sk-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: #6b4c36;
+      margin-bottom: 5px;
+    }
+
+    .track {
+      height: 7px;
+      background: #f0e0cc;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .fill {
+      height: 100%;
+      background: #a86b42;
+      border-radius: 999px;
+      animation: grow 1s ease both;
+      animation-play-state: paused;
+    }
+
+    .fill.on {
+      animation-play-state: running;
+    }
+
+    @keyframes grow {
+      from {
+        width: 0 !important;
+      }
+    }
+
+    /* PROJECT */
+    .proj-box {
+      background: #fff;
+      border: 1px solid #e8d5bf;
+      border-left: 4px solid #a86b42;
+      border-radius: 12px;
+      padding: 24px 28px;
+    }
+
+    .proj-box h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #7a4f2e;
+      margin-bottom: 14px;
+    }
+
+    .proj-box ul {
+      list-style: none;
+      font-size: 13px;
+      color: #6b4c36;
+      line-height: 2.1;
+    }
+
+    .proj-box ul li::before {
+      content: '→  ';
+      color: #c9a07a;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      background: #f5ead8;
+      color: #9a7055;
+      border: 1px solid #e8d5bf;
+      padding: 3px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+    }
+
+    /* EDUCATION */
+    .edu-item {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+      align-items: flex-start;
+    }
+
+    .edu-year {
+      min-width: 110px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #c9a07a;
+      padding-top: 3px;
+    }
+
+    .edu-body {
+      background: #fff;
+      border: 1px solid #e8d5bf;
+      border-radius: 12px;
+      padding: 18px 22px;
+      flex: 1;
+    }
+
+    .edu-body h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #7a4f2e;
+      margin-bottom: 4px;
+    }
+
+    .edu-body p {
+      font-size: 13px;
+      color: #9a7055;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .con-item {
+      background: #fff;
+      border: 1px solid #e8d5bf;
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-size: 13px;
+      color: #6b4c36;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+
+    .con-item:hover {
+      background: #fff5ea;
+      border-color: #c9956c;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(122, 79, 46, 0.12);
+    }
+
+    .con-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 18px;
+    }
+
+    .con-icon.email {
+      background: #fde8e8;
+    }
+
+    .con-icon.ig {
+      background: #fde8f5;
+    }
+
+    .con-icon.wa {
+      background: #e8fded;
+    }
+
+    .con-icon.coming {
+      background: #f0eefd;
+    }
+
+    .con-text span {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: #c9a07a;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 3px;
+    }
+
+    .con-text strong {
+      font-size: 13px;
+      font-weight: 400;
+      color: #6b4c36;
+    }
+
+    .con-arrow {
+      margin-left: auto;
+      font-size: 16px;
+      color: #c9a07a;
+      opacity: 0;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .con-item:hover .con-arrow {
+      opacity: 1;
+      transform: translateX(3px);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #7a4f2e;
+      text-align: center;
+      color: #e8d5bf;
+      font-size: 12px;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media(max-width: 640px) {
+      nav {
+        flex-direction: column;
+        gap: 12px;
+        padding: 14px 20px;
+      }
+
+      header {
+        padding: 48px 24px;
+        gap: 28px;
+        text-align: center;
+      }
+
+      section {
+        padding: 48px 20px;
+      }
+
+      .about-grid,
+      .skill-wrap,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">Amita Syakira</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#project">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="photo-wrap">
+      <img src="pacarjake.jpeg" alt="Amita Syakira">
+    </div>
+    <div class="hero-text">
+      <h1>Amita Syakira</h1>
+      <p class="role">Information Technology Student · UMSU</p>
+      <p class="bio">I am a second-semester IT student at Muhammadiyah University of North Sumatra. Passionate about
+        learning new technologies and developing my skills in the field of IT.</p>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2 class="sec">About Me</h2>
+    <div class="about-grid">
+      <div class="box">
+        <h3>Who I Am</h3>
+        <p>I'm currently studying Information Technology at UMSU. I have a strong interest in web development,
+          information systems, and digital media. I'm a responsible, fast learner who enjoys working in a team.</p>
+      </div>
+      <div class="box">
+        <h3>Interests</h3>
+        <ul>
+          <li>Web Technology</li>
+          <li>Information Systems</li>
+          <li>UI/UX Basics</li>
+          <li>Digital Media</li>
+        </ul>
+        <h3 style="margin-top:16px">Strengths</h3>
+        <ul>
+          <li>Responsible & Fast Learner</li>
+          <li>Teamwork & Communication</li>
+          <li>Adaptability</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" style="background:#fff8f2">
+    <h2 class="sec">Skills</h2>
+    <div class="skill-wrap">
+      <div class="box">
+        <h3>Technical</h3>
+        <div class="sk-item">
+          <div class="sk-label"><span>Microsoft Word</span><span>90%</span></div>
+          <div class="track">
+            <div class="fill" style="width:90%"></div>
+          </div>
+        </div>
+        <div class="sk-item">
+          <div class="sk-label"><span>Microsoft PowerPoint</span><span>95%</span></div>
+          <div class="track">
+            <div class="fill" style="width:95%"></div>
+          </div>
+        </div>
+        <div class="sk-item">
+          <div class="sk-label"><span>Microsoft Excel</span><span>80%</span></div>
+          <div class="track">
+            <div class="fill" style="width:80%"></div>
+          </div>
+        </div>
+        <div class="sk-item">
+          <div class="sk-label"><span>Basic HTML</span><span>60%</span></div>
+          <div class="track">
+            <div class="fill" style="width:60%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <h3>Soft Skills</h3>
+        <div class="sk-item">
+          <div class="sk-label"><span>Communication</span><span>85%</span></div>
+          <div class="track">
+            <div class="fill" style="width:85%"></div>
+          </div>
+        </div>
+        <div class="sk-item">
+          <div class="sk-label"><span>Teamwork</span><span>90%</span></div>
+          <div class="track">
+            <div class="fill" style="width:90%"></div>
+          </div>
+        </div>
+        <div class="sk-item">
+          <div class="sk-label"><span>Critical Thinking</span><span>75%</span></div>
+          <div class="track">
+            <div class="fill" style="width:75%"></div>
+          </div>
+        </div>
+        <div class="sk-item">
+          <div class="sk-label"><span>Creativity</span><span>80%</span></div>
+          <div class="track">
+            <div class="fill" style="width:80%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="project">
+    <h2 class="sec">Projects</h2>
+    <div class="proj-box">
+      <h3>Academic Presentation & Assignment Project</h3>
+      <ul>
+        <li>Created presentation slides for academic assignments.</li>
+        <li>Developed reports and written coursework.</li>
+        <li>Analyzed information from educational sources.</li>
+        <li>Improved communication and presentation skills.</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">PowerPoint</span>
+        <span class="tag">Research</span>
+        <span class="tag">Presentation</span>
+        <span class="tag">Writing</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" style="background:#fff8f2">
+    <h2 class="sec">Education</h2>
+    <div class="edu-item">
+      <div class="edu-year">2025 – Present</div>
+      <div class="edu-body">
+        <h3>S1 Information Technology</h3>
+        <p>Muhammadiyah University of North Sumatra (UMSU)</p>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-year">2022 – 2025</div>
+      <div class="edu-body">
+        <h3>Senior High School</h3>
+        <p>SMAN 1 Ranah Batahan</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="sec">Contact</h2>
+    <div class="contact-grid">
+
+      <!-- Email -->
+      <a class="con-item" href="mailto:mitaaa040407@gmail.com">
+        <div class="con-icon email">📧</div>
+        <div class="con-text">
+          <span>Email</span>
+          <strong>mitaaa040407@gmail.com</strong>
+        </div>
+        <div class="con-arrow">→</div>
+      </a>
+
+      <!-- Instagram -->
+      <a class="con-item" href="https://instagram.com/amitasyakiraa" target="_blank" rel="noopener noreferrer">
+        <div class="con-icon ig">📸</div>
+        <div class="con-text">
+          <span>Instagram</span>
+          <strong>@amitasyakiraa</strong>
+        </div>
+        <div class="con-arrow">→</div>
+      </a>
+
+      <!-- WhatsApp -->
+      <a class="con-item" href="https://wa.me/6282268498172" target="_blank" rel="noopener noreferrer">
+        <div class="con-icon wa">💬</div>
+        <div class="con-text">
+          <span>WhatsApp</span>
+          <strong>+62 822-6849-8172</strong>
+        </div>
+        <div class="con-arrow">→</div>
+      </a>
+
+      <!-- GitHub -->
+      <a class="con-item" href="https://github.com/mitaaa-sys/Amitasyakira-cv.git" target="_blank"
+        rel="noopener noreferrer">
+        <div class="con-icon coming">🐙</div>
+        <div class="con-text">
+          <span>GitHub</span>
+          <strong>amitasyakira-cloud</strong>
+        </div>
+        <div class="con-arrow">→</div>
+      </a>
+
+    </div>
+  </section>
+
+  <footer>© 2026 Amita Syakira · Personal CV Website</footer>
+
+  <script>
+    const fills = document.querySelectorAll('.fill');
+    const io = new IntersectionObserver(es => {
+      es.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+    }, { threshold: 0.4 });
+    fills.forEach(f => io.observe(f));
+  </script>
+
+</body>
+
+</html>
